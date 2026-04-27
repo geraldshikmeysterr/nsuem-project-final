@@ -25,13 +25,13 @@
     </style>
 </head>
 <body>
-
+ 
 <?php require_once __DIR__ . '/_nav.php'; ?>
-
+ 
 <div class="container py-5" style="max-width: 760px;">
-
+ 
     <div class="profile-card p-4 mb-4 d-flex align-items-center gap-4">
-        <div class="author-avatar">
+        <div class="author-avatar" role="img" aria-label="Аватар пользователя">
             <?= mb_strtoupper(mb_substr($_SESSION['user_email'] ?? 'U', 0, 1)) ?>
         </div>
         <div>
@@ -39,9 +39,9 @@
             <span class="badge bg-secondary"><?= $_SESSION['user_role'] === 'admin' ? 'Администратор' : 'Читатель' ?></span>
         </div>
     </div>
-
+ 
     <h4 class="text-white mb-3">Мои комментарии (<?= count($comments) ?>)</h4>
-
+ 
     <?php if (empty($comments)): ?>
         <div class="alert alert-secondary">Вы ещё не оставляли комментариев.</div>
     <?php else: ?>
@@ -70,8 +70,8 @@
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
-
+ 
 </div>
-
+ 
 </body>
 </html>
